@@ -41,6 +41,36 @@ return;
 
 }
 
+//juggling algorithm of array rotation
+int GCD(int n,int d){
+    if(d==0){
+        return n;
+    }
+    GCD(d,n%d);
+}
+void arrRotation2(int arr[],int n,int d){
+
+    int temp;
+    int f = GCD(n,d);
+
+    for(int i=0;i<f;i++){
+        temp = arr[i];
+        int j=i;
+
+        while(((j+d)%n)!= i){
+            arr[j] = arr[(j+d)%n];
+            j = j+d;
+        }
+
+        arr[j]=temp;
+
+
+    }
+
+return;
+
+}
+
 int main(){
     int arr[1000];
     int n,d;
@@ -51,7 +81,7 @@ int main(){
         cin>>arr[i];
     }
 
-    arrRotation1(arr,n,d);
+    arrRotation2(arr,n,d);
 
      for(int i=0;i<n;i++){
         cout<<arr[i]<<" ";
