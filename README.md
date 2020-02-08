@@ -1,2 +1,2 @@
 # C++ practice-problems
-This repo contains c++ codes of questions that i practiced.
+This repo contains c++ codes of questions I practiced.
